@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   fractol.h                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ualcibar <ualcibar@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/02/22 19:21:43 by ualcibar          #+#    #+#             */
+/*   Updated: 2022/02/22 20:40:57 by ualcibar         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef FRACTOL_H
 # define FRACTOL_H
 
@@ -6,7 +18,12 @@
 # include <math.h>
 //# include "../libft/libft.h"
 # include <fcntl.h>
-# include <mlx.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include "minilibx/mlx.h"
+#include "libft/libft.h"
+#include <math.h>
+
 
 typedef struct		data_fract
 {
@@ -38,5 +55,23 @@ typedef struct		data_fract
 	double			c_i;
 	//int				mov_juju;
 }               fract;
+
+/*					*	
+*	    init		*
+*					*/
+int check_param(fract *f, char *param);
+void controller(fract *f);
+void    init_map(fract *f);
+
+/*					*	
+*	  Mandelbrot	*
+*					*/
+void init_mandelbrot(fract *f);
+void    start_mandelbrot(fract *f);
+
+/*					*	
+*	  utils			*
+*					*/
+void set_color(fract *f);
 
 #endif
